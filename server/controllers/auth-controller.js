@@ -1,5 +1,4 @@
 const User = require("../models/UserReg");
-const bcrypt = require("bcryptjs");
 
 const getUser = (req, res)=>{
     res.json({message:"got all the user"})
