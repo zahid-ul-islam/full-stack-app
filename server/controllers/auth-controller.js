@@ -12,7 +12,7 @@ const createUser = async (req,res)=>{
             res.status(400).json({message:"email already taken"});
         }
         const user = await User.create({username, email, password, phone})
-        res.status(200).json({msg: "registration successful", token:await user.generateToken()});
+        res.status(201).json({msg: "registration successful", token:await user.generateToken()});
         
     } catch (error) {
         console.log(error);

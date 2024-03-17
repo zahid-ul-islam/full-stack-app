@@ -4,8 +4,17 @@ const connectDB = require("./utils/db");
 const router = require("./routes/auth-routes");
 const contactRouter = require("./routes/contact-route")
 const errorMiddleware = require('./middlewares/error-middleware');
+const cors = require("cors")
 
 require("dotenv").config();
+
+const corsPolicy ={
+    origin:"http://localhost:5173",
+    methods:"GET, PUT, DELETE, PATCH, HEAD",
+    credentials:true,
+}
+
+app.use(cors(corsPolicy))
 
 app.use(express.json());
 
